@@ -1,0 +1,47 @@
+<div class="container" ng-controller="UsersController">
+	<h1>Add Users</h1>
+	<form class="form-horizontal" role="form">
+	  <div class="form-group">
+	    <label class="control-label col-sm-2" for="email">First Name:</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" ng-model="newUser.first_name" placeholder="Enter First Name...">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label col-sm-2">Last Name:</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" ng-model="newUser.last_name" placeholder="Enter Last Name...">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label col-sm-2">Favorite Language:</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" ng-model="newUser.language" placeholder="Enter Favorite Language...">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button class="btn btn-default" ng-click="addUser()">Create User</button>
+	    </div>
+	  </div>
+	</form>
+	<br>
+	<table class="table">
+	    <thead>
+	      <tr>
+	        <th>First name</th>
+	        <th>Last name</th>
+	        <th>Language</th>
+	        <th>Actions</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr ng-repeat="user in users">
+	        <td>{{user.first_name}}</td>
+	        <td>{{user.last_name}}</td>
+	        <td>{{user.language}}</td>
+	        <td><button class="btn btn-danger btn-xs" ng-click="deleteUser()">Delete</button></td>
+	      </tr>
+	    </tbody>
+	</table>
+</div>
